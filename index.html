@@ -20,22 +20,33 @@
     <meta property="og:url" content="https://www.mywebsite.com/page" />
     <link rel="canonical" href="https://www.mywebsite.com/page" /> -->
 
-    <!-- <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/my.webmanifest" />
-    <meta name="theme-color" content="#FF00FF" /> -->
+    <link rel="icon" href="./assets/favicon.ico" />
+    <meta name="theme-color" content="#FFF" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-77XX0VWDVS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-77XX0VWDVS");
+    </script>
   </head>
 
-  <body class="p-4 lg:p-8">
-    <header class="flex items-center justify-between pb-3 md:pb-4 lg:pb-6">
+  <body class="p-1 md:p-4 lg:p-8">
+    <header class="flex items-center justify-between pb-2 md:pb-4 lg:pb-6">
       <h1 class="text-xl sm:text-3xl lg:text-4xl font-bold">
         STAYANOTHERMINUTE
       </h1>
 
       <nav class="text-base sm:text-lg">
         <ol>
-          <li>ABOUT</li>
+          <li><a href="about.html">ABOUT</a></li>
         </ol>
       </nav>
     </header>
@@ -48,7 +59,7 @@
           <img class="image" src="./assets/images/1.jpg" />
         </div>
         <div class="col-span-6 lg:col-span-3">
-          <video class="image" loop="true" autoplay="true" muted>
+          <video loop="true" autoplay="true" muted>
             <source src="./assets/video/1.m4v" type="video/mp4" />
           </video>
         </div>
@@ -60,30 +71,42 @@
           <img class="image" src="./assets/images/4.jpg" />
         </div>
         <div class="col-span-6 lg:col-span-6 lg:!h-96">
-          <img class="image" src="./assets/images/5.jpg" />
+          <img class="image" src="./assets/images/15.jpg" />
         </div>
 
         <div class="col-span-4 lg:col-span-3">
-          <img class="image" src="./assets/images/6.jpg" />
+          <img class="image" src="./assets/images/16.jpg" loading="lazy" />
         </div>
-        <div class="col-span-4 lg:col-span-5">
-          <img class="image" src="./assets/images/7.jpg" />
+        <div class="col-span-4 lg:col-span-3">
+          <img class="image" src="./assets/images/7.jpg" loading="lazy" />
         </div>
-        <div class="col-span-4 lg:col-span-4">
-          <img class="image" src="./assets/images/8.jpg" />
+        <div class="col-span-4 lg:col-span-3">
+          <img class="image" src="./assets/images/13.jpg" loading="lazy" />
+        </div>
+
+        <div class="col-span-4 lg:col-span-3">
+          <img class="image" src="./assets/images/11.jpg" loading="lazy" />
+        </div>
+
+        <div class="col-span-8 lg:col-span-12 lg:!h-[500px]">
+          <img
+            class="image object-center"
+            src="./assets/images/14.jpg"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
 
     <div class="modal inset-0 h-full w-full fixed hidden">
       <div class="flex h-full w-full justify-center items-center flex-col">
-        <div class="h-screen w-screen p-4 lg:p-8">
-          <span class="block w-full text-center pb-1 sm:text-xs">
+        <div class="h-full w-full p-4 lg:p-8 text-right">
+          <img id="modal-image" class="h-full w-full object-contain" src="" />
+          <span class="pb-1 sm:text-xs">
             <span class="inline-block md:hidden">tap</span>
             <span class="hidden md:inline-block">click</span> anywhere to
             close</span
           >
-          <img id="modal-image" class="h-full w-full object-contain" src="" />
         </div>
       </div>
     </div>
@@ -97,7 +120,7 @@
               .querySelector("#modal-image")
               .setAttribute("src", evt.target.src);
             document.querySelector(".modal").classList.remove("hidden");
-            document.body.classList.add("fixed");
+            document.body.classList.add("overflow-hidden");
           }
         },
         false
@@ -105,7 +128,7 @@
 
       document.querySelector(".modal").addEventListener("click", (event) => {
         document.querySelector(".modal").classList.add("hidden");
-        document.body.classList.remove("fixed");
+        document.body.classList.remove("overflow-hidden");
       });
     </script>
   </body>
