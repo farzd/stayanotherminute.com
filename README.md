@@ -1,7 +1,3 @@
-
-www.stayanotherminute.com
-
-
 Squarespace alternative for photography portfolio for developers
 - tailwind css [CDN]
 - custom grid sizing for different breakpoints 
